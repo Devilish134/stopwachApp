@@ -1,0 +1,22 @@
+@import './settings.scss';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin-top: 56px;
+  padding: 0;
+  background: $background;
+  font-size: ($base-size * 3.1);
+  color: $text;
+  letter-spacing: 0.5px;
+}
+
+:global(.container) {
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+@import "./typography.scss";

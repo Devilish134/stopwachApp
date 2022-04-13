@@ -1,4 +1,4 @@
-//import styles from './Counter.module.scss';
+import styles from './Counter.module.scss';
 
 const Counter = ({ time }) => {
 
@@ -17,7 +17,7 @@ const Counter = ({ time }) => {
   console.log(formatTime(300000))
 
   return (
-      <div>{formatTime(time)}</div>
+      <div className={styles.Counter}>{formatTime(time)}</div>
   );
 };
 
