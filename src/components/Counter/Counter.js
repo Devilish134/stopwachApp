@@ -1,23 +1,23 @@
 import styles from './Counter.module.scss';
 
-const Counter = ({ time }) => {
+const Counter = props => {
 
-  const formatTime = duration => {
-    var milliseconds = parseInt((duration % 1000) / 100),
-      seconds = Math.floor((duration / 1000) % 60),
-      minutes = Math.floor((duration / (1000 * 60)) % 60),
-      hours = Math.floor((duration / (1000 * 60 * 60)) % 24);
+  const formatTime = timeInSeconds => {
+    let time = parseFloat(timeInSeconds).toFixed(3);
+    let hour = Math.floor(time / 60 / 60);
+    let minute = Math.floor(time / 60) % 60;
+    let seconds = Math.floor(time - minute * 60);
+    let milliseconds = time.slice(-2);
 
-    hours = (hours < 10) ? "0" + hours : hours;
-    minutes = (minutes < 10) ? "0" + minutes : minutes;
+    hour = (hour < 10) ? "0" + hour : hour;
+    minute = (minute < 10) ? "0" + minute : minute;
     seconds = (seconds < 10) ? "0" + seconds : seconds;
 
-    return hours + ":" + minutes + ":" + seconds + "." + milliseconds;
-  }
-  console.log(formatTime(300000))
+    return hour + ":" + minute + ":" + seconds + "." + milliseconds;
+  };
 
   return (
-      <div className={styles.Counter}>{formatTime(time)}</div>
+      <div className={styles.Counter}>{formatTime(props.children)}</div>
   );
 };
 
