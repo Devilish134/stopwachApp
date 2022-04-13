@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Container from "./components/Container/Container";
 import Counter from "./components/Counter/Counter";
+import Button from "./components/Button/Button";
 
 const App = () => {
 
@@ -10,6 +11,9 @@ const App = () => {
   return (
     <Container>
       <Counter />
+      <Button>Start</Button>
+      <Button>Stop</Button>
+      <Button>Reset</Button>
     </Container>
   );
 };
