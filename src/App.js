@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Counter from "./components/Counter/Counter";
 
 const App = () => {
 
@@ -6,7 +7,7 @@ const App = () => {
   const [interval, setInterval] = useState(null);
 
   return (
-    <h1>Hello world</h1>
+    <Counter />
   );
 };
 
