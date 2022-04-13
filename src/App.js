@@ -10,12 +10,12 @@ const App = () => {
 
   const reset = () => {
     setTime(0);
-    setTimer(null);
   };
 
   const start = () => {
     setTimer(setInterval(() => {
-      setTime(prevValue => prevValue + 0.01);
+      setTime(prevValue => 
+        prevValue + 0.01);
     }, 10))
   };
 
