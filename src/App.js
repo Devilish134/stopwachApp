@@ -1,10 +1,9 @@
-import { useEffect, useState } from "react";
-import Container from "./components/Container/Container";
-import Counter from "./components/Counter/Counter";
-import Button from "./components/Button/Button";
+import { useEffect, useState } from 'react';
+import Container from './components/Container/Container';
+import Counter from './components/Counter/Counter';
+import Button from './components/Button/Button';
 
 const App = () => {
-
   const [time, setTime] = useState(0);
   const [timer, setTimer] = useState(null);
 
@@ -13,20 +12,22 @@ const App = () => {
   };
 
   const start = () => {
-    setTimer(setInterval(() => {
-      setTime(prevValue => 
-        prevValue + 0.01);
-    }, 10))
+    setTimer(
+      setInterval(() => {
+        setTime((prevValue) => prevValue + 0.01);
+      }, 10)
+    );
+    clearInterval(timer);
   };
 
   const stop = () => {
     clearInterval(timer);
     setTimer();
-  }
+  };
 
   useEffect(() => {
     return () => {
-       if(timer) clearInterval(timer);
+      if (timer) clearInterval(timer);
     };
   }, []);
 
